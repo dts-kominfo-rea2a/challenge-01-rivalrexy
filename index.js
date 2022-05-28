@@ -7,24 +7,26 @@ const firstUser = {
   gender: "Female",
   age: 17,
   email: "monica@dingdong.com",
-  favoriteColor: new Set(), //"Yellow, Pink, White, Purple",
+  favoriteColor: [], //"Yellow, Pink, White, Purple",
   isHavePet: "Yes",
   education: [],
-  favoriteRestaurant: new Set(),
+  favoriteRestaurant: [],
 };
 const secondUser = {
   name: "Wendy",
   gender: "Male",
   age: 23,
   email: "wendy@dingdong.com",
-  favoriteColor: new Set(),
+  favoriteColor: [],
   isHavePet: "No",
   education: [],
-  favoriteRestaurant: new Set(),
+  favoriteRestaurant: [],
 };
 // TODO: Masukkan hasil akhir dari kedua user di sini
-firstUser.favoriteColor.add("Yellow").add("Pink").add("White").add("Purple");
-firstUser.favoriteRestaurant
+const firstUserFavoriteColor = new Set();
+const firstUserFavoriteRestaurant = new Set();
+firstUserFavoriteColor.add("Yellow").add("Pink").add("White").add("Purple");
+firstUserFavoriteRestaurant
   .add("Bento")
   .add("Sushi")
   .add("Pancake")
@@ -36,14 +38,18 @@ firstUser.favoriteRestaurant
   .add("Tteok")
   .add("Sushi")
   .add("Sushi");
+firstUser.favoriteColor.push(...firstUserFavoriteColor);
+firstUser.favoriteRestaurant.push(...firstUserFavoriteRestaurant);
 firstUser.education.push(
   "name: SD 01, city: Jakarta, graduate: 2016",
   "name: SMP 02, city: Jakarta, graduate: 2019",
   "name: SMA 03, city: Tangerang"
 );
 
-secondUser.favoriteColor.add("Blue").add("Black").add("Grey");
-secondUser.favoriteRestaurant
+const secondUserFavoriteColor = new Set();
+const secondUserFavoriteRestaurant = new Set();
+secondUserFavoriteColor.add("Blue").add("Black").add("Grey");
+secondUserFavoriteRestaurant
   .add("Tempura")
   .add("Bento")
   .add("Sushi")
@@ -53,6 +59,8 @@ secondUser.favoriteRestaurant
   .add("Geprek")
   .add("Pancake")
   .add("Eggy");
+secondUser.favoriteColor.push(...secondUserFavoriteColor);
+secondUser.favoriteRestaurant.push(...secondUserFavoriteRestaurant);
 secondUser.education.push(
   "name: SD 02, city: Jakarta, graduate: 2010",
   "name: SMP 03, city: Bogor, graduate: 2013",
